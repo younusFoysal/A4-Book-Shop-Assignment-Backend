@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="JetClientState">
+    <option name="draftsState">
+      <draftsState>
+        <option name="requests">
+          <list>
+            <requestState>
+              <option name="body">
+                <bodyState>
+                  <option name="raw" value="{&#10;  &quot;title&quot;: &quot;Milk and Honey&quot;,&#10;  &quot;author&quot;: &quot;Rupi Kaur&quot;,&#10;  &quot;price&quot;: 10.99,&#10;  &quot;category&quot;: &quot;Poetry&quot;,&#10;  &quot;description&quot;: &quot;A collection of poetry and prose about survival and femininity.&quot;,&#10;  &quot;image&quot;: &quot;https://www.kamoi.net/wp-content/uploads/2020/11/Milk-and-honey-book-cover.png&quot;,&#10;  &quot;rating&quot;: 4.5,&#10;  &quot;quantity&quot;: 20,&#10;  &quot;inStock&quot;: true&#10;}" />
+                  <option name="type" value="JSON" />
+                </bodyState>
+              </option>
+              <option name="headers">
+                <list>
+                  <headerState>
+                    <option name="key" value="Content-Type" />
+                    <option name="value" value="application/json" />
+                  </headerState>
+                </list>
+              </option>
+              <option name="id" value="9ebec2e0-009d-46a3-bffa-09b524e37f2f" />
+              <option name="method" value="POST" />
+              <option name="name" value="Draft" />
+              <option name="url" value="http://localhost:5000/api/add-product" />
+            </requestState>
+            <requestState>
+              <option name="id" value="182f232d-d7b7-405e-8247-7b851c709c22" />
+              <option name="method" value="GET" />
+              <option name="name" value="Draft (1)" />
+              <option name="queryParams">
+                <list>
+                  <queryParamState>
+                    <option name="key" value="category" />
+                    <option name="value" value="SelfDevelopment" />
+                  </queryParamState>
+                </list>
+              </option>
+              <option name="url" value="http://localhost:5000/api/allproducts?category=SelfDevelopment" />
+            </requestState>
+          </list>
+        </option>
+      </draftsState>
+    </option>
+    <option name="id" value="5e5de7fb-a150-46e1-a7a4-7c1d34e9055e" />
+    <option name="version" value="3" />
+  </component>
+</project>
