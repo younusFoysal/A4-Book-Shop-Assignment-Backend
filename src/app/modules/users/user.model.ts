@@ -30,6 +30,7 @@ const userSchema = new Schema<TUser, UserModel>(
     },
   },
   {
+    timestamps: true,
     versionKey: false,
   },
 );
