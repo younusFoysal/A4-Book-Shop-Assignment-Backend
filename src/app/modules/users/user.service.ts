@@ -1,5 +1,6 @@
 import { TUser } from './user.interface';
 import { User } from './user.model';
+import QueryBuilder from '../../builder/queryBuilder';
 
 const createUserIntoDB = async (payload: TUser) => {
   const result = await User.create(payload);
@@ -7,8 +8,13 @@ const createUserIntoDB = async (payload: TUser) => {
   return result;
 };
 
-const getalluserintodb = async () => {
-  const result = await User.find();
+const getalluserintodb = async (query: Record<string, unknown>) => {
+  const ProductSearchableFields = ['name', 'email'];
+  const searchQuery = new QueryBuilder(User.find(), query)
+  .search(ProductSearchableFields)
+  .filter()
+  .sort();
+  const result = await searchQuery.modelQuery;
 
   return result;
 };

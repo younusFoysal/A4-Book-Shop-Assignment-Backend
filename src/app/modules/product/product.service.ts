@@ -3,7 +3,7 @@ import AppError from '../../errors/AppError';
 import { TProduct } from './product.interface';
 import { ProductModel } from './product.model';
 
-const ProductSerachable = ['brand', 'name', 'category'];
+
 
 const createProductIntoDb = async (payload: TProduct) => {
   const result = await ProductModel.create(payload);
@@ -17,14 +17,29 @@ const getsingleIntoDb = async (id: string) => {
   return result;
 };
 
+
 const getallProductintoDb = async (query: Record<string, unknown>) => {
-  const SearchQuery = new QueryBuilder(ProductModel.find(), query)
-    .search(ProductSerachable)
+  const ProductSearchableFields = ['title', 'author', 'genre'];
+  const searchQuery = new QueryBuilder(ProductModel.find(), query)
+    .search(ProductSearchableFields)
     .filter()
     .sort();
-  const result = await SearchQuery.modelQuery;
+
+  const result = await searchQuery.modelQuery;
   return result;
 };
+
+// const getallProductintoDb = async (query: Record<string, unknown>) => {
+//   const ProductSerachable = ['title', 'author', 'genre'];
+//   const searchQuery = new QueryBuilder(ProductModel.find(), query)
+//     .search(ProductSerachable)
+//     .filter()
+//     .sort();
+//
+//   const result = await searchQuery.modelQuery;
+//   return result;
+// };
+
 
 const UpdateProductIntoDb = async (
   payload: Partial<TProduct>,

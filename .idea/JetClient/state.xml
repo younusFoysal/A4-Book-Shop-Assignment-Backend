@@ -26,18 +26,83 @@
               <option name="url" value="http://localhost:5000/api/add-product" />
             </requestState>
             <requestState>
+              <option name="body">
+                <bodyState>
+                  <option name="type" value="JSON" />
+                </bodyState>
+              </option>
+              <option name="headers">
+                <list>
+                  <headerState>
+                    <option name="key" value="Content-Type" />
+                    <option name="value" value="application/json" />
+                  </headerState>
+                </list>
+              </option>
               <option name="id" value="182f232d-d7b7-405e-8247-7b851c709c22" />
               <option name="method" value="GET" />
               <option name="name" value="Draft (1)" />
-              <option name="queryParams">
+              <option name="url" value="http://localhost:5000/api/allproducts" />
+            </requestState>
+            <requestState>
+              <option name="body">
+                <bodyState>
+                  <option name="raw" value="{&#10;  &quot;name&quot; : &quot;Foysal&quot;,&#10;  &quot;email&quot; : &quot;foysal@gmail.com&quot;,&#10;  &quot;password&quot; : &quot;foysal@gmail.com&quot;&#10;}" />
+                  <option name="type" value="JSON" />
+                </bodyState>
+              </option>
+              <option name="headers">
                 <list>
-                  <queryParamState>
-                    <option name="key" value="category" />
-                    <option name="value" value="SelfDevelopment" />
-                  </queryParamState>
+                  <headerState>
+                    <option name="key" value="Content-Type" />
+                    <option name="value" value="application/json" />
+                  </headerState>
                 </list>
               </option>
-              <option name="url" value="http://localhost:5000/api/allproducts?category=SelfDevelopment" />
+              <option name="id" value="342e987c-4486-4902-a11b-7084df8a4bad" />
+              <option name="method" value="POST" />
+              <option name="name" value="Draft (1) (1)" />
+              <option name="url" value="http://localhost:5000/api/auth/register" />
+            </requestState>
+            <requestState>
+              <option name="body">
+                <bodyState>
+                  <option name="raw" value="{&#10;  &quot;email&quot; : &quot;foysal@gmail.com&quot;,&#10;  &quot;password&quot; : &quot;foysal@gmail.com&quot;&#10;}" />
+                  <option name="type" value="JSON" />
+                </bodyState>
+              </option>
+              <option name="headers">
+                <list>
+                  <headerState>
+                    <option name="key" value="Content-Type" />
+                    <option name="value" value="application/json" />
+                  </headerState>
+                </list>
+              </option>
+              <option name="id" value="f5ec62ac-6983-4c75-b955-f1d735796acf" />
+              <option name="method" value="POST" />
+              <option name="name" value="Draft (1) (1) (1)" />
+              <option name="url" value="http://localhost:5000/api/auth/login" />
+            </requestState>
+            <requestState>
+              <option name="body">
+                <bodyState>
+                  <option name="raw" value="{&#10;  &quot;email&quot; : &quot;foysal@gmail.com&quot;,&#10;  &quot;password&quot; : &quot;foysal@gmail.com&quot;&#10;}" />
+                  <option name="type" value="JSON" />
+                </bodyState>
+              </option>
+              <option name="headers">
+                <list>
+                  <headerState>
+                    <option name="key" value="Content-Type" />
+                    <option name="value" value="application/json" />
+                  </headerState>
+                </list>
+              </option>
+              <option name="id" value="1943ae4f-8564-451e-8c7e-6df91f3bb422" />
+              <option name="method" value="GET" />
+              <option name="name" value="Draft (1) (1) (1) (1)" />
+              <option name="url" value="http://localhost:5000/api/orders" />
             </requestState>
           </list>
         </option>
