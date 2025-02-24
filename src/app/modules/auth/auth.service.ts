@@ -46,10 +46,13 @@ const loginUser = async (payload: TLoginUser) => {
 };
 
 const changePassword = async (
-  userData: JwtPayload,
+  userData,
   payload: { oldPassword: string; newPassword: string },
 ) => {
   // checking if the user is exist
+
+  //console.log(userData, payload);
+
   const user = await User.isUserExistsByCustomId(userData.email);
 
   if (!user) {
@@ -77,13 +80,14 @@ const changePassword = async (
 
   await User.findOneAndUpdate(
     {
-      id: userData.userId,
+      _id: userData.userId,
       role: userData.role,
     },
     {
       password: newHashedPassword,
     },
   );
+
 
   return null;
 };
