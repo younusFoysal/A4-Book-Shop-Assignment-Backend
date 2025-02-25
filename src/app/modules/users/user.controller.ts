@@ -45,7 +45,12 @@ const getAllUsers = catchAsync(async (req, res) => {
 const getUserById = catchAsync(async (req, res) => {
   const { userId } = req.params;
   const result = await userServices.getUserById(userId);
-  SendResponse(res, { statusCode: httpStatus.OK, success: true, message: 'User retrieved successfully', data: result });
+  SendResponse(res, {
+    statusCode: httpStatus.OK,
+    success: true,
+    message: 'User retrieved successfully',
+    data: result,
+  });
 });
 
 const deleteUser = catchAsync(async (req, res) => {

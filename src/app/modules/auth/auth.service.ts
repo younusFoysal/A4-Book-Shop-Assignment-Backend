@@ -8,13 +8,11 @@ import { JwtPayload } from 'jsonwebtoken';
 import bcrypt from 'bcrypt';
 
 const loginUser = async (payload: TLoginUser) => {
-  // checking if the user is exist
   const user = await User.isUserExistsByCustomId(payload.email);
 
   if (!user) {
     throw new AppError(httpStatus.NOT_FOUND, 'This user is not found !');
   }
-  // checking if the user is already deleted
 
   const isBlocked = user?.isBlocked;
 
@@ -24,8 +22,6 @@ const loginUser = async (payload: TLoginUser) => {
 
   if (!(await User.isPasswordMatched(payload?.password, user?.password)))
     throw new AppError(401, 'Invalid credentials');
-
-  //create token and sent to the  client
 
   const jwtPayload = {
     name: user.name,
@@ -46,12 +42,9 @@ const loginUser = async (payload: TLoginUser) => {
 };
 
 const changePassword = async (
-  userData,
+  userData: JwtPayload,
   payload: { oldPassword: string; newPassword: string },
 ) => {
-  // checking if the user is exist
-
-  //console.log(userData, payload);
 
   const user = await User.isUserExistsByCustomId(userData.email);
 
@@ -59,15 +52,11 @@ const changePassword = async (
     throw new AppError(httpStatus.NOT_FOUND, 'This user is not found !');
   }
 
-  // checking if the user is blocked
-
   const userStatus = user?.isBlocked;
 
   if (userStatus) {
     throw new AppError(httpStatus.FORBIDDEN, 'This user is blocked ! !');
   }
-
-  //checking if the password is correct
 
   if (!(await User.isPasswordMatched(payload.oldPassword, user?.password)))
     throw new AppError(httpStatus.FORBIDDEN, 'Password do not matched');
@@ -80,7 +69,7 @@ const changePassword = async (
 
   await User.findOneAndUpdate(
     {
-      _id: userData.userId,
+      _id: userData.id,
       role: userData.role,
     },
     {

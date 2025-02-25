@@ -1,5 +1,7 @@
 import mongoose, { FilterQuery, Query } from 'mongoose';
 
+
+
 class QueryBuilder<T> {
   public modelQuery: Query<T[], T>;
   public query: Record<string, unknown>;
@@ -36,7 +38,9 @@ class QueryBuilder<T> {
       }
     });
 
-    const filterConditions: FilterQuery<T> = {};
+    // Add type assertion to filterConditions
+    const filterConditions = {} as Record<string, any>;
+
 
     if (this.query.category) {
       filterConditions.category = this.query.category;

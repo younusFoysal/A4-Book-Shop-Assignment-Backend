@@ -6,6 +6,19 @@ const router = express.Router();
 
 const stripe = new Stripe(config.stripe_scret_key as string);
 
+// router.post('/create-payment-intent', async (req, res) => {
+//   try {
+//     const { amount } = req.body;
+//     const paymentIntent = await stripe.paymentIntents.create({
+//       amount,
+//       currency: 'usd',
+//     });
+//     res.status(200).json({ clientSecret: paymentIntent.client_secret });
+//   } catch (error) {
+//     res.status(500).json({ error: error.message });
+//   }
+// });
+
 router.post('/create-payment-intent', async (req, res) => {
   try {
     const { amount } = req.body;
@@ -14,9 +27,11 @@ router.post('/create-payment-intent', async (req, res) => {
       currency: 'usd',
     });
     res.status(200).json({ clientSecret: paymentIntent.client_secret });
-  } catch (error) {
+  } catch (err) {
+    const error = err as Error;
     res.status(500).json({ error: error.message });
   }
 });
+
 
 export const stripeRouter = router;

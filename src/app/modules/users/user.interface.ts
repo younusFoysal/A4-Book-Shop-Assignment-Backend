@@ -8,6 +8,7 @@ export interface TUser {
   password: string;
   role: 'admin' | 'user';
   isBlocked: boolean;
+  _id?: string;
 }
 
 export interface UserModel extends Model<TUser> {
