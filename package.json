@@ -27,6 +27,7 @@
     "jsonwebtoken": "^9.0.2",
     "lint-staged": "^15.1.0",
     "mongoose": "^8.0.1",
+    "node-fetch": "^3.3.2",
     "stripe": "^17.6.0",
     "zod": "^3.24.1"
   },
