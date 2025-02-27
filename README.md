@@ -1,6 +1,6 @@
 <h1 align="center">Book Shop Server </h1>
 
-Live Server: [Book-Shop-Server](https://book-shop-server-swart.vercel.app/) [Link Will be updated soon]
+Live Server: [Book-Shop-Server](https://bookhubserver.vercel.app/)
 
 
 ## Project Overview
